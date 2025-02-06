@@ -39,7 +39,11 @@ jobs:
             
             composer install --no-dev --optimize-autoloader
             
+            php artisan breeze:install --force
+            
             php artisan migrate --force
+            
+            npm install
             
             php artisan cache:clear
             php artisan config:clear
