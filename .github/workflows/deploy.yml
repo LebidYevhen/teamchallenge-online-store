@@ -49,7 +49,7 @@ jobs:
             php artisan route:cache
             php artisan view:cache
             
-            chown -R www-data:www-data storage bootstrap/cache
-            chmod -R 775 storage bootstrap/cache
+            sudo chown -R www-data:www-data storage bootstrap/cache
+            sudo chmod -R 775 storage bootstrap/cache
             
             sudo service php8.3-fpm reload
