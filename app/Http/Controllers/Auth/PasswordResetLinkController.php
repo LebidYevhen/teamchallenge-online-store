@@ -15,6 +15,8 @@ class PasswordResetLinkController extends Controller
      */
     public function create(): View
     {
+        abort(403, 'Forgot password is disabled.');
+
         return view('auth.forgot-password');
     }
 
@@ -25,6 +27,8 @@ class PasswordResetLinkController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        abort(403, 'Forgot password is disabled.');
+
         $request->validate([
             'email' => ['required', 'email'],
         ]);

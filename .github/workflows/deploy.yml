@@ -39,6 +39,11 @@ jobs:
             
             composer install --no-dev --optimize-autoloader
             
+            # Run Spatie vendor publish only if it's not published yet
+            if [ ! -f database/migrations/2021_04_07_014829_create_permission_tables.php ]; then
+              php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"
+            fi
+            
             php artisan migrate --force
             
             npm install
