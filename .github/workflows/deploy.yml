@@ -46,7 +46,7 @@ jobs:
 
             php artisan optimize:clear
 
-            sudo chown -R www-data:www-data storage bootstrap/cache
+            sudo chown -R yevhen16_vps_usr:www-data storage bootstrap/cache
             sudo chmod -R 775 storage bootstrap/cache
 
             sudo service php8.3-fpm reload
