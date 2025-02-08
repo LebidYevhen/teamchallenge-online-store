@@ -36,25 +36,17 @@ jobs:
             cd /var/www/yevhen16_vps_usr/data/www/dev.yevhen16.vps-dns.info
             git fetch --prune
             git pull origin development
-            
+
             composer install --no-dev --optimize-autoloader
-            
-            # Run Spatie vendor publish only if it's not published yet
-            if [ ! -f database/migrations/2021_04_07_014829_create_permission_tables.php ]; then
-              php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"
-            fi
-            
+
             php artisan migrate --force
-            
+
             npm install
             npm run build
-            
-            php artisan cache:clear
-            php artisan config:clear
-            php artisan route:cache
-            php artisan view:cache
-            
+
+            php artisan optimize:clear
+
             sudo chown -R www-data:www-data storage bootstrap/cache
             sudo chmod -R 775 storage bootstrap/cache
-            
+
             sudo service php8.3-fpm reload
