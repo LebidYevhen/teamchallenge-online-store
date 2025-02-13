@@ -33,7 +33,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd /var/www/yevhen16_vps_usr/data/www/dev.yevhen16.vps-dns.info
+            cd /var/www/yevhen16_vps_usr/data/www/yevhen16.vps-dns.info
             git fetch --prune
             git pull origin development
 
