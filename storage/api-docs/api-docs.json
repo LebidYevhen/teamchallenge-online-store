@@ -18,11 +18,11 @@
             "description": "Local Server"
         },
         {
-            "url": "http://176.118.167.213:7777/dev.yevhen16.vps-dns.info",
+            "url": "https://dev.yevhen16.vps-dns.info",
             "description": "Development Server"
         },
         {
-            "url": "https://yevhen16.vps-dns.info",
+            "url": "https://teamchallenge-online-store.site",
             "description": "Production Server"
         }
     ],
