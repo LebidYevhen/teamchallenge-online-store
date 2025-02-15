@@ -11,6 +11,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified', 'role:admin'])->name('dashboard');
 
+Route::get('/apidoc', function () {
+    return view('apidoc');
+})->middleware(['auth', 'verified', 'role:admin'])->name('apidoc');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
