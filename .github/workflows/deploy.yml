@@ -3,7 +3,7 @@ name: Laravel Deployment
 on:
   push:
     branches:
-      - development
+      - main
   pull_request:
     types:
       - closed
@@ -33,9 +33,9 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd /var/www/yevhen16_vps_usr/data/www/yevhen16.vps-dns.info
+            cd /var/www/yevhen16_vps_usr/data/www/teamchallenge-online-store.site
             git fetch --prune
-            git pull origin development
+            git pull origin main
 
             composer install --no-dev --optimize-autoloader
 
